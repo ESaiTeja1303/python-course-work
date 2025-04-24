@@ -97,7 +97,7 @@ while True:
         confirm = input("Proceed to payment? (yes/no): ")
         if confirm.lower() == "yes":
             # Simulate payment
-            if random.choice([True, True, True, False]):  # 75% success
+            if random.choice([True, True, True, False]):  
                 print("Payment Successful ✅")
                 booking_info = {
                     "category": selected_cat,
