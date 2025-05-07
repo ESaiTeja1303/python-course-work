@@ -1,4 +1,4 @@
-# Import the module (with the name 'module' imported as 'm')
+# Eraram Sai Teja Goud (PFS-22)
 import module1 as m
 
 def display_menu():
@@ -19,6 +19,10 @@ def display_menu():
     print("14. Roman to Integer")
     print("15. Integer to Roman")
     print("16. All Diagonals (Bottom-Left to Top-Right)")
+    print("17. Max product subarray kadane")
+    print("18. Largest word in string")
+    print("19. Replace elements with rank")
+    print("20. Move all zeroes to left in array")
     print("0. Exit")
 
 
@@ -58,6 +62,14 @@ while True:
         print(m.integer_to_roman())
     elif option == 16:
         print(m.all_diagonals_bottom_left_to_top_right())
+    elif option == 17:
+        print(m.max_product_subarray_kadane())
+    elif option == 18:
+        print(m.largest_word_in_string())
+    elif option == 19:
+        print(m.replace_elements_with_rank())
+    elif option == 20:
+        print(m.move_zeroes_to_left())
     elif option == 0:
         print("Exiting program...")
         break

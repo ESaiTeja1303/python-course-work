@@ -1,3 +1,4 @@
+# Eraram Sai Teja Goud (PFS-22)
 def binary_to_decimal():
   return '''
   ***binary to decimal***
@@ -573,4 +574,127 @@ def all_diagonals_bottom_left_to_top_right():
 ===========================================
   '''
 
+def max_product_subarray_kadane():
+  return '''
+  **Maximum Product Subarray - Kadane's Variation**
 
+  arr = list(map(int, input("Enter array elements separated by space: ").split()))
+  max_prod = arr[0]
+  min_prod = arr[0]
+  result = arr[0]
+
+  for i in range(1, len(arr)):
+    if arr[i] < 0:
+      max_prod, min_prod = min_prod, max_prod
+
+    max_prod = max(arr[i], max_prod * arr[i])
+    min_prod = min(arr[i], min_prod * arr[i])
+
+    result = max(result, max_prod)
+
+  print("Maximum Product Subarray is:", result)
+  ==========================================
+  Testcase-1:
+  Enter array elements separated by space: 2 3 -2 4
+  Output:
+  Maximum Product Subarray is: 6
+  ------------------------------------------
+  Testcase-2:
+  Enter array elements separated by space: -2 0 -1
+  Output:
+  Maximum Product Subarray is: 0
+  ===========================================
+  '''
+
+def largest_word_in_string():
+  return '''
+  **Find the Largest Word in a String**
+
+  s = input("Enter a sentence: ")
+  words = s.split()
+  max_word = ""
+  for word in words:
+    if len(word) > len(max_word):
+      max_word = word
+
+  print("The largest word is:", max_word)
+  ==========================================
+  Testcase-1:
+  Enter a sentence: I love programming in Python
+  Output:
+  The largest word is: programming
+  ------------------------------------------
+  Testcase-2:
+  Enter a sentence: This is a test sentence
+  Output:
+  The largest word is: sentence
+  ===========================================
+  '''
+
+
+def replace_elements_with_rank():
+  return '''
+  **Replace Elements by Their Rank in the Array (No List Comprehension)**
+
+  arr = list(map(int, input("Enter array elements separated by space: ").split()))
+  unique = []
+  for num in arr:
+    if num not in unique:
+      unique.append(num)
+  unique.sort()
+
+  rank_map = {}
+  rank = 1
+  for num in unique:
+    rank_map[num] = rank
+    rank += 1
+
+  ranked_arr = []
+  for num in arr:
+    ranked_arr.append(rank_map[num])
+
+  print("Ranked array:", ranked_arr)
+  ==========================================
+  Testcase-1:
+  Enter array elements separated by space: 40 10 20 30
+  Output:
+  Ranked array: [4, 1, 2, 3]
+  ------------------------------------------
+  Testcase-2:
+  Enter array elements separated by space: 100 100 50 10
+  Output:
+  Ranked array: [3, 3, 2, 1]
+  ===========================================
+  '''
+
+
+def move_zeroes_to_left():
+  return '''
+  **Move All Zeroes in the Array to the Left**
+
+  arr = list(map(int, input("Enter array elements separated by space: ").split()))
+  result = []
+  zero_count = 0
+
+  for num in arr:
+    if num == 0:
+      zero_count += 1
+    else:
+      result.append(num)
+
+  for _ in range(zero_count):
+    result.insert(0, 0)
+
+  print("Array after moving zeroes to the left:", result)
+  ==========================================
+  Testcase-1:
+  Enter array elements separated by space: 1 0 2 0 3 4
+  Output:
+  Array after moving zeroes to the left: [0, 0, 1, 2, 3, 4]
+  ------------------------------------------
+  Testcase-2:
+  Enter array elements separated by space: 0 0 0 1
+  Output:
+  Array after moving zeroes to the left: [0, 0, 0, 1]
+  ===========================================
+  '''
