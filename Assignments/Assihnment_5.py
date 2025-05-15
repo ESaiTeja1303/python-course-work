@@ -80,8 +80,18 @@ class CarRentalSystem:
                 print(car.get_info())
 
     def make_reservation(self, customer_name, car_id, days):
-        customer = next((c for c in self.customers if c.name == customer_name), None)
-        car = next((c for c in self.cars if c.car_id == car_id and c.available), None)
+        customer = None
+        for c in self.customers:
+            if c.name == customer_name:
+                customer = c
+                break
+
+        car = None
+        for c in self.cars:
+            if c.car_id == car_id and c.available:
+                car = c
+                break
+
         if customer and car:
             reservation = Reservation(customer, car, days)
             self.reservations.append(reservation)
